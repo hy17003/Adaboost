@@ -99,7 +99,7 @@ void StrongClassifier::SetTerminateCriteria(double _dMinAccuracy, double _dMaxFa
 
 bool StrongClassifier::bShouldStop(TrainData& trainData)
 {
-	int bRes = false;
+	bool bRes = false;
 	//第一行 真正 真负 第二行 假正 假负
 	for (int i = 0; i < 2; i++)
 	{

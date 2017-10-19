@@ -11,6 +11,7 @@ public:
 	Cascade();
 	~Cascade();
 	void Train(TrainData& trainData);
+	void Train(vector<string> imagePath, vector<int> labels);
 	int Predict(FEATURE feature);
 	void SetTerminateCriteria(int _iMaxStageNum, double _dMinAccracy, double _dMaxFalseAlarm);
 

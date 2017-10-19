@@ -6,10 +6,16 @@
 #include <opencv2\opencv.hpp>
 #include <iostream>
 #include "Cascade.h"
+#include "HaarExtractor.h"
 
 using namespace std;
+using namespace cv;
 
-void main()
+#define PRINT(VAL) cout << VAL << ' ';
+#define FOR_EACH(VECTOR, FUNC) for(int i = 0;i<VECTOR.size();i++)FUNC(VECTOR[i]);
+
+
+void main1()
 {
 	TrainData td;
 	double x[10] = { 0,1,2,3,4,5,6,7,8,9 };
@@ -25,4 +31,26 @@ void main()
 		cout << cascade.Predict(x[i]) << endl;
 	}
 	system("pause");
+}
+
+//void main()
+//{
+//	Mat testMat(Size(10, 10), CV_8UC1, Scalar::all(1));
+//	HaarExtractor haarExtractor;
+//	haarExtractor.InitHaarExtractor(50, 50);
+//	vector<double> features = haarExtractor.getHaarFeature(testMat);
+//	FOR_EACH(features, PRINT);
+//}
+
+void main()
+{
+	vector<int> vec;
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(3);
+	Mat mat(Size(3, 1), CV_32SC1, vec.data());
+	cout << mat << endl;
+	Mat line(Size(3, 1), CV_32SC1, vec.data());
+	mat.push_back(line);
+	cout << mat << endl;
 }

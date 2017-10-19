@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Cascade.h"
 #include <algorithm>
+#include "HaarExtractor.h"
 
 bool CompareTrainItem(TRAIN_ITEM& ti1, TRAIN_ITEM& ti2)
 {
@@ -23,6 +24,38 @@ Cascade::Cascade()
 
 Cascade::~Cascade()
 {
+
+}
+
+void Cascade::Train(vector<string> imagePath, vector<int> labels)
+{
+	//提取所有样本的haar特征
+	HaarExtractor haarExtractor;
+	haarExtractor.InitHaarExtractor(10, 10);
+	Mat trainMat;
+	Mat trainLabel(Size(labels.size(),1), CV_32SC1, labels.data());
+	for (int i = 0; i < imagePath.size(); i++)
+	{
+		Mat image = imread(imagePath[i], 0);
+		vector<double> feats = haarExtractor.GetHaarFeature(image);
+		if (i == 0)
+		{
+			trainMat = Mat(Size(1, feats.size()), CV_32FC1, feats.data());
+		}
+		else
+		{
+			Mat line(Size(1, feats.size()), CV_32FC1, feats.data());
+			trainMat.push_back(line);
+		}
+	}
+	//根据haar特征的数量，生成相应数量的弱分类器，每个弱分类器对应一个haar特征
+	int iHaarNum = haarExtractor.GetHaarFeatureNumber();
+	weakClassifiers = vector<WeakClassifier>(iHaarNum);
+	//训练每一个弱分类器
+	for (int i = 0; i < weakClassifiers.size(); i++)
+	{
+		
+	}
 
 }
 

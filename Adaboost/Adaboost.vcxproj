@@ -41,13 +41,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -147,6 +147,8 @@
   <ItemGroup>
     <ClInclude Include="Cascade.h" />
     <ClInclude Include="Classifier.h" />
+    <ClInclude Include="define.h" />
+    <ClInclude Include="HaarExtractor.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="StrongClassifier.h" />
     <ClInclude Include="targetver.h" />
@@ -156,6 +158,8 @@
     <ClCompile Include="Adaboost.cpp" />
     <ClCompile Include="Cascade.cpp" />
     <ClCompile Include="Classifier.cpp" />
+    <ClCompile Include="define.cpp" />
+    <ClCompile Include="HaarExtractor.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

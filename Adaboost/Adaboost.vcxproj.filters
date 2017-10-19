@@ -36,6 +36,12 @@
     <ClInclude Include="StrongClassifier.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="HaarExtractor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -54,6 +60,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="StrongClassifier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HaarExtractor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="define.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

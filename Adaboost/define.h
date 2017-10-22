@@ -16,8 +16,10 @@ typedef struct RECT_STRU
 typedef struct HAARECT_STRU
 {
 	Rect Rects[4];
-	double weight[4];
+	float weight[4];
 }HAARECT_STRU, *PHAARECT_STRU;
 
+
+void readTxtToVector(string filename, vector<string>* pImagePath, vector<int>* pLabel = NULL);
 
 #endif

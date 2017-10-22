@@ -154,8 +154,8 @@ void HaarExtractor::InitHaarExtractor(int iWidth, int iHeight)
 					{
 						struHaarRects.push_back(haarRects0);
 					}
-					if (struHaarRects.size() > 30)return;
-				/*	HAARECT_STRU haarRects1;
+					// debug if (struHaarRects.size() > 30)return;
+					HAARECT_STRU haarRects1;
 					if (MakeHaarRects(x, y, dx, dy, 1, iWidth, iHeight, haarRects1) != -1)
 					{
 						struHaarRects.push_back(haarRects1);
@@ -169,7 +169,7 @@ void HaarExtractor::InitHaarExtractor(int iWidth, int iHeight)
 					if (MakeHaarRects(x, y, dx, dy, 3, iWidth, iHeight, haarRects3) != -1)
 					{
 						struHaarRects.push_back(haarRects3);
-					}*/
+					}
 				}
 			}
 		}
